@@ -4,7 +4,7 @@
     </h1>
     <div class="user-no-content mat-elevation-z8" *ngIf="!users.length">
         <h1>Nenhum usuário cadastrado!</h1>
-        <button mat-flat-button color="primary" (click)="createUser()">Criar Usuário</button>
+        <button mat-flat-button color="primary" (click)="createUser()">Novo Usuário</button>
     </div>
     <div *ngIf="users.length">
         <div class="user-tools">
@@ -27,7 +27,7 @@
                       </mat-select>
                 </div>
             </div>
-            <button mat-flat-button color="primary" (click)="createUser()">Criar Usuário</button>
+            <button mat-flat-button color="primary" (click)="createUser()">Novo Usuário</button>
         </div>
         <div class="user-content mat-elevation-z2">
             <table mat-table [dataSource]="users">
