@@ -1,0 +1,176 @@
+.user-form{
+    padding: 1rem !important;
+    height: 100%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.5rem 1.5rem 0.5rem;
+        
+        .main-title{
+            font-weight: 550;
+        }
+        
+        .sub-title{
+            font-weight: 550;
+            color: #a9a9a9;
+            padding-top: 0.5rem;
+            font-size: 0.75rem;
+        }
+    }
+
+    .close-dialog{
+        align-self: center;
+        padding-right: 1rem;
+        cursor: pointer;
+    }
+
+}
+
+.content{
+    height: 100%;
+
+    &-inline{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &-field{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .input-label{
+                font-size: 0.75rem;
+                padding-top: 1rem;
+                font-weight: 550;
+
+                .secundary-label{
+                    color: #a9a9a9;
+                    font-style: italic;
+                }
+            }
+
+            .preferencial-contact-radio-group{
+                font-size: 0.75rem;
+            }
+            
+            .profile-select{
+                font-size: 0.5rem;
+                border-radius: 0.5rem;
+                border: 1px solid #d6d6d6;
+                height: 2.5rem;
+
+                ::ng-deep .mat-mdc-select-arrow-wrapper{
+                    padding-right: 0.5rem !important;
+                    align-self: flex-end;
+                    height: 2.5rem;
+                }
+
+                &-view{
+                    display: flex;
+                    padding: 0 0.5rem;
+
+                    &-chip{
+                        padding: 0 0.5rem;
+                        background-color: #e3e3fe;
+                        border-radius: 1rem;
+                        align-self: center;
+                        font-size: 0.5rem;
+                        font-weight: 550;
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 0 0.5rem;
+                    }
+
+                    &-icon{
+                        font-size: 0.8rem;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+
+            .language-select{
+                font-size: 0.75rem;
+                border-radius: 0.5rem;
+                border: 1px solid #d6d6d6;
+                height: 2rem;
+                font-weight: 550;
+                padding-left: 0.5rem;
+
+                ::ng-deep .mat-mdc-select-arrow-wrapper{
+                    padding-right: 0.5rem !important;
+                    align-self: flex-end;
+                    height: 2rem;
+                }
+
+            }
+
+            .phone-input{
+                display: flex;
+                padding: 0;
+
+                .phone-select{
+                    font-size: 0.75rem;
+                    height: 2rem;
+                    font-weight: 550;
+                    width: 3.5rem;
+    
+                    ::ng-deep .mat-mdc-select-arrow-wrapper{
+                        padding-right: 0.5rem !important;
+                        align-self: flex-end;
+                        height: 2rem;
+                    }
+
+                    ::ng-deep .cdk-overlay-pane{
+                        width: 25rem;
+                    }
+    
+                    &-prefix{
+                        display: flex;
+    
+                        &-text{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            font-size: 0.8rem;
+                            height: 2rem;
+                            font-weight: 550;
+                            width: 3.5rem;
+                        }
+    
+                        .badge{
+                            border-radius: 50%;
+                            width: 2rem;
+                            align-items: center;
+                            display: flex;
+                            background: no-repeat;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    button{
+        width: 45%;
+    }
+}

@@ -1,0 +1,82 @@
+<div class="use-form">
+    <div class="header">
+        <div class="header-title">
+            <span class="main-title">{{data ? 'Editar Usuário' : 'Adicionar usuário'}}</span>
+            <span class="sub-title">Aqui você adiciona e configura os usuários que fazem parte da sua equipe</span>
+        </div>
+        <mat-icon class="close-dialog" (click)="close()">close</mat-icon>
+    </div>
+    <div class="content" mat-dialog-content>
+        <div class="content-inline">
+            <div class="content-inline-field padding-right-0">
+                <span class="input-label">Nome</span>
+                <input class="input-button" type="text" [(ngModel)]="user.nome">
+            </div>
+            <div class="content-inline-field padding-left-0">
+                <span class="input-label">Sobrenome</span>
+                <input class="input-button" type="text" [(ngModel)]="user.sobrenome">
+            </div>
+        </div>
+        <div class="content-inline">
+            <div class="content-inline-field padding-right-0">
+                <span class="input-label">Telefone</span>
+                <div class="phone-input input-button">
+                    <mat-select class="phone-select no-border padding-left-0" [(ngModel)]="userCountry" panelWidth="30">
+                        <mat-select-trigger class="phone-select-prefix">
+                            <span class="badge"><img class="badge" width="25" [src]="userCountry.image"></span>
+                        </mat-select-trigger>
+                        <mat-option *ngFor="let country of countryList" [value]="country">{{country.countryName + ' ' + country.prefix}}</mat-option>
+                    </mat-select>
+                    <span matPrefix class="padding-right-0 phone-select-prefix-text">{{userCountry.prefix}}</span>
+                    <input class="no-border" type="text" inputmode="numeric" [mask]="userCountry.mask" [(ngModel)]="user.telefone">
+                </div>
+            </div>
+            <div class="content-inline-field padding-left-0">
+                <span class="input-label">E-mail corporativo</span>
+                <input class="input-button" inputmode="email" type="text" [(ngModel)]="user.email">
+            </div>
+        </div>
+        <div class="content-inline">
+            <div class="content-inline-field">
+                <span class="input-label">Perfil de acesso</span>
+                <mat-select class="profile-select" multiple [(ngModel)]="user.perfil">
+                    <mat-select-trigger>
+                        <div class="profile-select-view">
+                            <div class="profile-select-view-chip" *ngFor="let perfil of user.perfil">
+                                {{perfil}}
+                                <mat-icon class="profile-select-view-icon" (click)="removeProfile(perfil)">close</mat-icon>
+                            </div>
+                        </div>                      
+                    </mat-select-trigger>
+                    <mat-option [value]="'SUPERVISOR'">Supervisor</mat-option>
+                    <mat-option [value]="'ANALISTA'">Analista</mat-option>
+                    <mat-option [value]="'DESENVOLVEDOR'">Desenvolvedor</mat-option>
+                    <mat-option [value]="'ESTAGIARIO'">Estágiario</mat-option>
+                </mat-select>
+            </div>
+        </div>
+        <div class="content-inline">
+            <div class="content-inline-field padding-right-0">
+                <span class="input-label">Idioma</span>
+                <mat-select class="language-select" [(ngModel)]="user.idioma">
+                    <mat-option [value]="'PT_BR'">Português BR</mat-option>
+                    <mat-option [value]="'EN_US'">Inglês US</mat-option>
+                    <mat-option [value]="'ES'">Espanhol</mat-option>
+                    <mat-option [value]="'OTHER'">Outra</mat-option>
+                </mat-select>
+            </div>
+            <div class="content-inline-field padding-left-0">
+                <div class="input-label">Contato preferencial<span class="secundary-label"> - Opcional</span></div>
+                <mat-radio-group class="preferencial-contact-radio-group" [(ngModel)]="user.contatoPreferencial">
+                    <mat-radio-button value="EMAIL">E-mail</mat-radio-button>
+                    <mat-radio-button value="TELEFONE">Telefone</mat-radio-button>
+                    <mat-radio-button value="TODOS">Todos</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" mat-dialog-actions>
+        <button class="padding-right-0" mat-flat-button color="secundary" (click)="close()">Fechar</button>
+        <button class="padding-left-0" mat-flat-button color="primary" (click)="saveUser()">Enviar Convite</button>
+    </footer>
+</div>

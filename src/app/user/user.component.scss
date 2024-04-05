@@ -1,0 +1,133 @@
+.user-container {
+    margin: 1rem 2rem;
+    padding: 2rem;
+}
+  
+table {
+    width: 100%;
+}
+
+.user-no-content{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.user-content{
+    height: 60vh;
+    overflow: auto;
+    background-color: white;
+
+    padding: 0rem 2rem;
+
+    .status-column{
+        .badge-active{
+            background-color: #c8e7d5;
+            color: #4d975b;
+            font-weight: 500;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .badge-pending{
+            background-color: #dbe292a1;
+            color: #9c9938;
+            font-weight: 500;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .badge-block{
+            background-color: #f9c4c4;
+            color: #c23939;
+            font-weight: 500;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+        }
+    }
+
+    .user-column{
+        display: flex;
+        flex-direction: row;
+
+        .badge{
+            border-radius: 50%;
+            background-color: red;
+            height: 2rem;
+            width: 2rem;
+            margin-right: 0.5rem;
+            align-items: center;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+
+        }
+
+        &-info{
+            display: flex;
+            flex-direction: column;
+
+            .user-primary-info{
+                font-weight: 550;
+            }
+    
+            .user-secundary-info{
+                margin-top: 0.25rem;
+                color: #a9a9a9;
+                font-weight: 550;
+            }
+        }
+
+    }
+}
+
+.user-tools{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+
+    .user-tools-search-fields{
+        display: flex;
+        align-items: center;
+    }
+
+    .user-filter-selection{
+        width: 10rem;
+        height: 1rem;
+        align-content: center;
+        font-size: 0.9rem;
+        background-color: white;
+    }
+}
+
+.user-pagination{
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-control{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        button{
+            height: 2rem !important;
+            min-width: 2rem !important;
+            margin: 0rem 0.5rem;
+        }
+
+        &-pages{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &-rows{
+        width: 10rem;
+    }
+}
